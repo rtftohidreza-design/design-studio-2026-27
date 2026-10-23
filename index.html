@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TOHID REZA Design Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tohid.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <nav class="nav">
+    <a class="brand" href="#" onclick="goHome();return false">
+      <span class="brand-mark">TR</span>
+      <span>TOHID REZA<small>DESIGN STUDIO</small></span>
+    </a>
+    <div class="navlinks" id="navLinks">
+      <button onclick="goHome()">Home</button>
+      <button onclick="scrollToId('templates')">Templates</button>
+      <button onclick="scrollToId('pricing')">Pricing</button>
+      <button onclick="showMyDesigns()">My Designs</button>
+    </div>
+    <button class="login-btn" onclick="openLogin()">Login</button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="eyebrow">✦ Premium Design Studio ✦</div>
+  <h1>Create <span class="grad">professional designs</span><br>in minutes.</h1>
+  <p>Choose a template, add your name and details, upload your photos, preview your design, and download instantly.</p>
+  <div class="search">
+    <input id="searchInput" placeholder="Search templates... (e.g. birthday, logo, wedding)" oninput="searchCards()">
+    <button onclick="searchCards()">Search</button>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+  <div class="category-tabs">
+    <button class="category-tab active" data-cat="name-logo" onclick="showCategory('name-logo',this)">🖼️ Name Logo</button>
+    <button class="category-tab" data-cat="business" onclick="showCategory('business',this)">💼 Business</button>
+    <button class="category-tab" data-cat="social-media" onclick="showCategory('social-media',this)">📱 Social Media</button>
+    <button class="category-tab" data-cat="events" onclick="showCategory('events',this)">🎉 Events</button>
+  </div>
+
+  <div id="templates">
+    <section class="cat-block active" id="cat-name-logo">
+      <div class="cat-title"><div><span class="eyebrow">Category</span><h2>Name Logo</h2></div><span class="count">5 designs</span></div>
+      <div class="type-row">
+        <button class="type-chip" onclick="openCreator('Name Logo')">Name Logo</button>
+        <button class="type-chip" onclick="openCreator('Profile DP')">Profile DP</button>
+        <button class="type-chip" onclick="openCreator('3 Photo Designs')">3 Photo Designs</button>
+        <button class="type-chip" onclick="openCreator('Birthday Poster')">Birthday Poster</button>
+        <button class="type-chip" onclick="openCreator('Couple Poster')">Couple Poster</button>
+      </div>
+    </section>
+    <section class="cat-block" id="cat-business">
+      <div class="cat-title"><div><span class="eyebrow">Category</span><h2>Business</h2></div><span class="count">5 designs</span></div>
+      <div class="type-row">
+        <button class="type-chip" onclick="openCreator('Business Logo')">Business Logo</button>
+        <button class="type-chip" onclick="openCreator('Visiting Card')">Visiting Card</button>
+        <button class="type-chip" onclick="openCreator('Business Advertisement')">Business Advertisement</button>
+        <button class="type-chip" onclick="openCreator('Product Advertisement')">Product Advertisement</button>
+        <button class="type-chip" onclick="openCreator('Restaurant Poster')">Restaurant Poster</button>
+      </div>
+    </section>
+    <section class="cat-block" id="cat-social-media">
+      <div class="cat-title"><div><span class="eyebrow">Category</span><h2>Social Media</h2></div><span class="count">6 designs</span></div>
+      <div class="type-row">
+        <button class="type-chip" onclick="openCreator('Instagram Post')">Instagram Post</button>
+        <button class="type-chip" onclick="openCreator('Facebook Post')">Facebook Post</button>
+        <button class="type-chip" onclick="openCreator('Social Media Banner')">Social Media Banner</button>
+        <button class="type-chip" onclick="openCreator('YouTube Thumbnail')">YouTube Thumbnail</button>
+        <button class="type-chip" onclick="openCreator('YouTube Channel Banner')">YouTube Channel Banner</button>
+        <button class="type-chip" onclick="openCreator('WhatsApp Status')">WhatsApp Status</button>
+      </div>
+    </section>
+    <section class="cat-block" id="cat-events">
+      <div class="cat-title"><div><span class="eyebrow">Category</span><h2>Events</h2></div><span class="count">4 designs</span></div>
+      <div class="type-row">
+        <button class="type-chip" onclick="openCreator('Wedding Poster')">Wedding Poster</button>
+        <button class="type-chip" onclick="openCreator('Birthday Invitation')">Birthday Invitation</button>
+        <button class="type-chip" onclick="openCreator('Event Poster')">Event Poster</button>
+        <button class="type-chip" onclick="openCreator('Festival Poster')">Festival Poster</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="gallery-head"><div><span class="eyebrow">Examples</span><h2>Design Gallery</h2></div></div>
+  <section class="grid" id="gallery"></section>
+  <div class="empty" id="empty">No matching templates found. Try another search.</div>
+
+  <section class="pricing" id="pricing">
+    <div class="pricing-head">
+      <span class="eyebrow">Simple Pricing</span>
+      <h2>Choose your <span class="grad">plan</span></h2>
+      <p>Start free, upgrade anytime</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Free</h3>
+        <div class="price-big">৳0</div>
+        <ul><li>✅ 3 Free Templates</li><li>✅ Watermark Output</li><li>❌ No HD Download</li><li>❌ No Premium Templates</li></ul>
+        <a class="btn secondary" href="#" onclick="showToast('Free plan selected!');return false">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <span class="popular-badge">🔥 Most Popular</span>
+        <h3>Pro</h3>
+        <div class="price-big">৳299<span>/month</span></div>
+        <ul><li>✅ All Templates</li><li>✅ HD Download</li><li>✅ No Watermark</li><li>✅ Priority Support</li></ul>
+        <a class="btn primary" href="#" onclick="showToast('Pro plan — demo checkout!');return false">Buy Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Lifetime</h3>
+        <div class="price-big">৳1499<span>/once</span></div>
+        <ul><li>✅ Everything in Pro</li><li>✅ Lifetime Access</li><li>✅ Future Updates</li><li>✅ VIP Support</li></ul>
+        <a class="btn secondary" href="#" onclick="showToast('Lifetime plan — demo checkout!');return false">Buy Now</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div style="font-size:26px;margin-bottom:6px">🎨</div>
+  <strong>TOHID REZA Design Studio</strong>
+  <p>© 2026 TOHID REZA Design Studio • Premium templates • Simple creation flow</p>
+</footer>
+
+<!-- CREATOR MODAL -->
+<div class="overlay" id="creatorOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <div><span class="eyebrow">Create Design</span><h2 id="creatorTitle">Design</h2></div>
+      <button class="close" onclick="closeCreator()">×</button>
+    </div>
+    <div class="creator">
+      <div class="preview">
+        <div class="preview-card" id="previewCard">
+          <img id="previewImg" alt="">
+          <div class="preview-content">
+            <div class="mini" id="previewType">DESIGN</div>
+            <h3 id="previewName">Your Name</h3>
+            <p id="previewInfo">Your information will appear here</p>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <div class="step"><span>1</span><strong>Enter Name / Title</strong></div>
+        <div class="field"><label>Your Name</label><input id="nameInput" placeholder="Enter your name" oninput="updatePreview()"></div>
+        <div class="step" style="margin-top:20px"><span>2</span><strong>Upload Photo</strong></div>
+        <div class="upload" onclick="document.getElementById('photoInput').click()">
+          <label>＋ Click to Upload Photo<br><small>JPG, PNG — optional</small></label>
+          <input id="photoInput" type="file" accept="image/*" onchange="previewPhoto(event)">
+          <img id="photoThumb" alt="">
+        </div>
+        <div class="step" style="margin-top:20px"><span>3</span><strong>Payment</strong></div>
+        <div class="price-box"><span style="color:var(--muted);font-size:13px">Poster Price</span><strong>৳10</strong></div>
+        <button class="pay-btn" onclick="payNow()">💳 Pay Now & Save Design</button>
+        <div class="notice">Demo checkout — no real payment is processed.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="overlay" id="loginOverlay">
+  <div class="login">
+    <span class="eyebrow">Design Studio</span>
+    <h2>Login</h2>
+    <p>Sign in to save and manage your designs.</p>
+    <div class="field"><label>Email</label><input type="email" placeholder="you@example.com"></div>
+    <div class="field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+    <button class="pay-btn" onclick="closeLogin();showToast('Logged in!')">Continue</button>
+    <div style="text-align:center;margin-top:14px"><span class="link" onclick="closeLogin()">Continue as guest</span></div>
+  </div>
+</div>
+
+<!-- MY DESIGNS MODAL -->
+<div class="overlay" id="myOverlay">
+  <div class="login" style="width:min(750px,100%)">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <div><span class="eyebrow">Saved Work</span><h2>My Designs</h2></div>
+      <button class="close" onclick="closeMyDesigns()">×</button>
+    </div>
+    <div id="savedList" style="margin-top:18px"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="tohid.js"></script>
+</body>
+</html>
