@@ -1,0 +1,15 @@
+const DESIGNS = [
+  {type:'Name Logo',cat:'name-logo',emoji:'🖼️'},
+  {type:'Profile DP',cat:'name-logo',emoji:'👤'},
+  {type:'3 Photo Designs',cat:'name-logo',emoji:'📸'},
+  {type:'Birthday Poster',cat:'name-logo',emoji:'🎂'},
+  {type:'Couple Poster',cat:'name-logo',emoji:'💑'},
+  {type:'Business Logo',cat:'business',emoji:'💼'},
+  {type:'Visiting Card',cat:'business',emoji:'💳'},
+  {type:'Business Advertisement',cat:'business',emoji:'📢'},
+  {type:'Product Advertisement',cat:'business',emoji:'📦'},
+  {type:'Restaurant Poster',cat:'business',emoji:'🍽️'},
+  {type:'Instagram Post',cat:'social-media',emoji:'📷'},
+  {type:'Facebook Post',cat:'social-media',emoji:'👍'},
+  {type:'Social Media Banner',cat:'social-media',emoji:'📱'},
+  {type:'YouTube Thumb
